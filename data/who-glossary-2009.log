@@ -1,0 +1,8 @@
+<log>
+  <item type="DateTime">2020-11-08T17:47:09</item>
+  <item type="PluginName">Microsoft Excel format</item>
+  <item type="InputFileName">D:\WORK\TMX_files_collection\who_glossary_2009\data\who-glossary-2009.xlsx</item>
+  <item type="OutputFileName">D:\WORK\TMX_files_collection\who_glossary_2009\data\who-glossary-2009.mtf.xml</item>
+  <item type="DefinitionFileName">D:\WORK\TMX_files_collection\who_glossary_2009\data\who-glossary-2009.xdt</item>
+  <item type="EntryCount">1488</item>
+</log>

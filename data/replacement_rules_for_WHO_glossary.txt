@@ -1,0 +1,66 @@
+https://perldoc.perl.org/perlre
+https://stackoverflow.com/questions/1039226/regex-to-change-to-sentence-case/16830360#16830360
+
+Replacement rules used to clean up WHO glossary
+
+
+
+Replace what:	Replace with:	What is does:
+^\d+\r\n			Removes page numbers
+^[A-Z]\r\n			Remove index letters
+
+Check "Match case" in Notepad ++
+\r\n([а-я])	 \1		Fixes newlines in wrong places
+\r\n([a-z])	 \1		Fixes newlines in wrong places
+(Exception for the rule: "pH-meter / Индикатор pH")
+\r\n(\([а-я])	 \1		Fixes newlines in wrong places
+\r\n(\([a-z])	 \1		Fixes newlines in wrong places
+\r\n(“)	 \1		Fixes newlines in wrong places
+(see "programmatically")
+
+Clear checkbox "Match case" in Notepad ++
+\r\n([а-я])
+
+ - 				Search for definitions
+также:
+e.g.
+syn.
+also:
+Ср.
+
+, syn.	 / syn.
+, син.	 / син.
+\r\n(См. также)		 \\ \1
+\r\n(Ср.)		 \\ \1
+
+\r\n^(См.)	\t \1	Put this on the same line as the terms
+\r\n^([А-Я])	\tDef. \1	Put definition on the same line as the terms
+
+^- 
+(
+.
+
+ \\ (См. также)	\t\1
+
+\([A-Z]+\)|\([А-Я]+\)		Remove abbreviations
+
+pl.
+The
+
+Replace Uppecase Letter with lowercase letter
+^([A-Z][a-z]+)(\t)	\l\1\2		Single-word terms
+^([A-Z][a-z]+)( [a-z]+)(\t)	\l\1\2\3	Two-word terms
+^([A-Z][a-z]+)( [a-z]+)( [a-z]+)(\t)	\l\1\2\3\4	Three-word terms
+^([A-Z])		\l\1	
+(syn. )([A-Z])		\1\l\2
+
+remove “”«»
+
+[a-z]\.[a-z]
+()
+"или" в русских терминах
+coll.
+разг.
+, The
+syn
+ – 
